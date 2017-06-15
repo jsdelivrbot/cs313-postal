@@ -9,8 +9,15 @@
 <% include ../partials/nav.ejs %>
 
 <div class="container">
-<h2>Resulting rate: <%- blahe %></h2>
+<% if (typeof rate !== 'undefined') { %> 
+<h2>Resulting rate: <%- rate %></h2>
+<% } %>
 
+
+<% if (typeof error !== 'undefined') { %> 
+<h2><%- error %></h2>
+<a class="btn" href="/">Try Again</a>
+<% } %>
 
 
 </div>
