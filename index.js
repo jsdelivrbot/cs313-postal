@@ -20,14 +20,12 @@ app.get('/rate', function(request, response) {
 });
 
 
-app.get('/results', calculateRate) //, (req, res)=> {
-//   console.log(typeof res.rate)
-//   res.locals.blahe = res.rate
-//   res.render('pages/results' )
-// })
+app.get('/results', calculateRate, (req, res)=> {
+  console.log(typeof res.rate)
+  res.locals.blahe = res.rate
+  res.render('pages/results' )
+})
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
-
-
